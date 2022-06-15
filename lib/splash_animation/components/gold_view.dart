@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class SportsView extends StatelessWidget {
+class GoldView extends StatelessWidget {
   final AnimationController animationController;
 
-  const SportsView({Key? key, required this.animationController})
+  const GoldView({Key? key, required this.animationController})
       : super(key: key);
 
   @override
@@ -90,7 +90,7 @@ class SportsView extends StatelessWidget {
                 child: SlideTransition(
                   position: _sportsSecondHalfAnimation,
                   child: Text(
-                    "Sports",
+                    "GOLD",
                     style:
                         TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
                   ),
@@ -100,7 +100,7 @@ class SportsView extends StatelessWidget {
                 padding:
                     EdgeInsets.only(left: 64, right: 64, bottom: 16, top: 16),
                 child: Text(
-                  "We provide you with the best sports equipment",
+                  "Gold is a level of wealth that is not shared with others. It is a privilege that is granted to a person by the government.",
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -111,7 +111,7 @@ class SportsView extends StatelessWidget {
                   child: Container(
                     constraints: BoxConstraints(maxWidth: 350, maxHeight: 250),
                     child: Image.asset(
-                      'assets/images/product/sports.png',
+                      'assets/images/membership/gold.jpg',
                       fit: BoxFit.contain,
                     ),
                   ),

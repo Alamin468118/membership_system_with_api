@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'components/center_next_button.dart';
-import 'components/clothes_view.dart';
-import 'components/food_view.dart';
+import 'components/platinum_view.dart';
+import 'components/elite_view.dart';
 import 'components/splash_view.dart';
-import 'components/sports_view.dart';
+import 'components/gold_view.dart';
 import 'components/top_back_skip_view.dart';
 import 'components/welcome_view.dart';
 
@@ -44,13 +44,13 @@ class _SplashAnimationScreenState extends State<SplashAnimationScreen>
             SplashView(
               animationController: _animationController!,
             ),
-            FoodView(
+            EliteView(
               animationController: _animationController!,
             ),
-            SportsView(
+            GoldView(
               animationController: _animationController!,
             ),
-            ClothesView(
+            PlatinumView(
               animationController: _animationController!,
             ),
             WelcomeView(

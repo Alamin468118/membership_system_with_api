@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ClothesView extends StatelessWidget {
+class PlatinumView extends StatelessWidget {
   final AnimationController animationController;
 
-  const ClothesView({Key? key, required this.animationController})
+  const PlatinumView({Key? key, required this.animationController})
       : super(key: key);
 
   @override
@@ -86,7 +86,7 @@ class ClothesView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Clothes",
+                "Platinum",
                 style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
               ),
               SlideTransition(
@@ -97,7 +97,7 @@ class ClothesView extends StatelessWidget {
                     padding: EdgeInsets.only(
                         left: 64, right: 64, top: 16, bottom: 16),
                     child: Text(
-                      "Various types of clothes are available for you to choose from. You can also buy clothes from the store.",
+                      "Platinum is paid for by the user. It is a subscription plan that allows the user to access the premium features of the app.",
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -110,7 +110,7 @@ class ClothesView extends StatelessWidget {
                   child: Container(
                     constraints: BoxConstraints(maxWidth: 350, maxHeight: 250),
                     child: Image.asset(
-                      'assets/images/product/clothes.png',
+                      'assets/images/membership/platinum.jpg',
                       fit: BoxFit.contain,
                     ),
                   ),

@@ -1,19 +1,20 @@
 import '../models/categoryModel.dart';
+import 'package:flutter/services.dart';
 
 final categories = [
   Category(
-    categoryName: "Foods",
-    imagePath: "assets/images/product/raw_food.png",
-    noOfItem: 96,
+    categoryName: "Elite membership",
+    imagePath: "assets/images/membership/elite.jpg",
+    noOfItem: 20,
   ),
   Category(
-    categoryName: "Sports",
-    imagePath: "assets/images/product/sports.png",
-    noOfItem: 67,
+    categoryName: "Gold membership",
+    imagePath: "assets/images/membership/gold.jpg",
+    noOfItem: 35,
   ),
   Category(
-    categoryName: "Clothes",
-    imagePath: "assets/images/product/clothes.png",
+    categoryName: "Platinum membership",
+    imagePath: "assets/images/membership/platinum.jpg",
     noOfItem: 45,
   ),
 ];

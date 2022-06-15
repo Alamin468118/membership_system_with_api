@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class FoodView extends StatelessWidget {
+class EliteView extends StatelessWidget {
   final AnimationController animationController;
 
-  const FoodView({Key? key, required this.animationController})
+  const EliteView({Key? key, required this.animationController})
       : super(key: key);
 
   @override
@@ -76,7 +76,7 @@ class FoodView extends StatelessWidget {
               SlideTransition(
                 position: _relaxAnimation,
                 child: Text(
-                  "Food",
+                  "ELITE",
                   style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -86,7 +86,7 @@ class FoodView extends StatelessWidget {
                   padding:
                       EdgeInsets.only(left: 64, right: 64, top: 16, bottom: 16),
                   child: Text(
-                    " We have a wide variety of food and drinks to choose from.",
+                    "Elite is a unique and exclusive membership program that offers you the best of both worlds.\n\n",
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -96,7 +96,7 @@ class FoodView extends StatelessWidget {
                 child: Container(
                   constraints: BoxConstraints(maxWidth: 350, maxHeight: 250),
                   child: Image.asset(
-                    'assets/images/product/raw_food.png',
+                    'assets/images/membership/elite.jpg',
                     fit: BoxFit.contain,
                   ),
                 ),

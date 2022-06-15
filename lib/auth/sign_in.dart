@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:membership_system_1/auth/forgot_password.dart';
 import 'package:membership_system_1/home_screen.dart';
 
 import 'sign_up.dart';
@@ -61,21 +62,6 @@ class _SignInPageState extends State<SignInPage> {
               SizedBox(
                 height: 90.0,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  Text(
-                    "Forgot Password ?",
-                    style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18.0),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10.0,
-              ),
               Card(
                 elevation: 5.0,
                 child: Padding(
@@ -92,14 +78,35 @@ class _SignInPageState extends State<SignInPage> {
                 ),
               ),
               SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ForgotPassword()));
+                    },
+                    child: Text(
+                      "Forgot Password ?",
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
                 height: 30.0,
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomeScreen()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
                 },
                 child: Container(
                   height: 50.0,

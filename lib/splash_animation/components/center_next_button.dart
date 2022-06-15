@@ -1,7 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
-import '../../sign_up.dart';
+import '../../auth/sign_up.dart';
 
 class CenterNextButton extends StatelessWidget {
   final AnimationController animationController;

@@ -176,64 +176,65 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                "OR",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 165, 201, 207),
-                  fontSize: 17.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        "assets/images/related_image/gmail.png",
-                        height: 40.0,
-                        width: 40.0,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        "assets/images/related_image/facebook.jpg",
-                        height: 59.0,
-                        width: 40.0,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset(
-                        "assets/images/related_image/apple_id.png",
-                        height: 59.0,
-                        width: 40.0,
-                      ),
-                    ),
-                  ),
-                ],
+                // ),
+                // SizedBox(
+                //   height: 10,
+                // ),
+                // Text(
+                //   "OR",
+                //   style: TextStyle(
+                //     color: Color.fromARGB(255, 165, 201, 207),
+                //     fontSize: 17.0,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+                // SizedBox(
+                //   height: 10,
+                // ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: <Widget>[
+                //     InkWell(
+                //       onTap: () {},
+                //       child: Padding(
+                //         padding: const EdgeInsets.all(8.0),
+                //         child: Image.asset(
+                //           "assets/images/related_image/gmail.png",
+                //           height: 40.0,
+                //           width: 40.0,
+                //         ),
+                //       ),
+                //     ),
+                //     const SizedBox(
+                //       width: 10.0,
+                //     ),
+                //     InkWell(
+                //       onTap: () {},
+                //       child: Padding(
+                //         padding: const EdgeInsets.all(8.0),
+                //         child: Image.asset(
+                //           "assets/images/related_image/facebook.jpg",
+                //           height: 59.0,
+                //           width: 40.0,
+                //         ),
+                //       ),
+                //     ),
+                //     const SizedBox(
+                //       width: 10.0,
+                //     ),
+                //     InkWell(
+                //       onTap: () {},
+                //       child: Padding(
+                //         padding: const EdgeInsets.all(8.0),
+                //         child: Image.asset(
+                //           "assets/images/related_image/apple_id.png",
+                //           height: 59.0,
+                //           width: 40.0,
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
               ),
             ],
           ),

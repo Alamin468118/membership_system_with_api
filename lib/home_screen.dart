@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:membership_system_1/widget/promotion_slider.dart';
 
-import 'data/hotitemData.dart';
-import 'highlight_product.dart';
-import 'hot_item.dart';
-import 'models/hotitemModel.dart';
+import 'widget/features_widget.dart';
+import 'widget/highlight_product.dart';
+import 'widget/member_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+
+  final List<String> imageList = [
+    "assets/images/promotion/50%_promotion.png",
+    "assets/images/promotion/promotion.jpg",
+    "assets/images/promotion/sale_promotion.jpg",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -14,207 +20,120 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            children: <Widget>[
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                // Display membership app and menu icon
-                children: [
-                  Icon(
-                    Icons.menu,
-                    size: 30,
-                    color: Colors.black,
-                  ),
-                  SizedBox(
-                    width: 90,
-                  ),
-                  Text(
-                    "MEMBERSHIP APP",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                alignment: Alignment(0.0, 0.1),
-                height: MediaQuery.of(context).size.height / 5.0,
-                width: MediaQuery.of(context).size.width / 1.0,
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade400,
-                  borderRadius: BorderRadius.circular(20.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(top: 10),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "MemberCard",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(255, 240, 175, 25),
-                            ),
-                          )
-                        ],
-                        style: TextStyle(fontSize: 20),
-                      ),
+                Row(
+                  // will do drawer widget here
+                  // Display membership app and menu icon
+                  children: [
+                    Icon(
+                      Icons.menu,
+                      size: 30,
+                      color: Colors.black,
                     ),
                     SizedBox(
-                      height: 20,
+                      width: 90,
                     ),
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "1234 **** **** 1234",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          )
-                        ],
-                        style: TextStyle(fontSize: 20),
+                    Text(
+                      "MEMBERSHIP APP",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
                 ),
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.06,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(20.0),
+                SizedBox(
+                  height: 20,
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                MemberCard(),
+                SizedBox(
+                  height: 10,
+                ),
+                FeaturesWidget(),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
                   children: [
+                    Text(
+                      "Offers available",
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  child: HighlightProduct(),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: 5,
+                      ),
+                    ),
                     Row(
                       children: [
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "Balance: ",
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              TextSpan(
-                                text: "RM 200",
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        ),
-                        Spacer(),
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "Points:",
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                            style: TextStyle(fontSize: 20),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 2,
-                        ),
                         Text(
-                          "150",
+                          "Promotion",
                           style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
                           ),
                         ),
                       ],
                     ),
+                    Spacer(),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        "See All",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue.shade300,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios_sharp,
+                      size: 20,
+                      color: Colors.blue.shade300,
+                    ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Text(
-                    "Daily Discover",
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
-                    ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  padding: EdgeInsets.only(
+                    top: 10,
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                child: HighlightProduct(),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Text(
-                    "Hot Items",
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: PromotionSlider(
+                    imageList: imageList,
                   ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Column(
-                children: material
-                    .map(buildHotItem)
-                    .toList(), //rename as material sbb ada error pakai item
-              )
-            ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
-}
-
-Widget buildHotItem(ItemData itemData) {
-  return Container(
-    margin: EdgeInsets.only(bottom: 10),
-    child: HotItem(
-      imagePath: itemData.imagePath,
-      id: itemData.id,
-      name: itemData.name,
-      category: itemData.category,
-      price: itemData.price,
-    ),
-  );
 }
