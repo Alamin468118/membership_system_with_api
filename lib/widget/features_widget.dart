@@ -11,9 +11,9 @@ class FeaturesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.137,
-      width: MediaQuery.of(context).size.width * 1.70,
+      width: MediaQuery.of(context).size.width * 0.89,
       decoration: BoxDecoration(
-        color: Colors.white70,
+        color: Colors.transparent,
         borderRadius: BorderRadius.zero,
       ),
       child: GridView.count(

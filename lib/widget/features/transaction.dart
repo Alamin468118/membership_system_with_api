@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:membership_system_1/app_theme.dart';
 import 'package:membership_system_1/home_screen.dart';
+import 'package:membership_system_1/widget/calendar.dart';
+import 'package:membership_system_1/widget/transaction_widget.dart';
+
+import '../transaction_history_widget.dart';
 
 class Transaction extends StatelessWidget {
   const Transaction({Key? key}) : super(key: key);
@@ -79,18 +84,17 @@ class Transaction extends StatelessWidget {
                                 shape: BoxShape.circle,
                               ),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(3.0),
                               child: Container(
-                                child: Text(
-                                  "Current Balance",
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
+                                child: Center(
+                                  child: Text(
+                                    "Current Balance",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -98,9 +102,6 @@ class Transaction extends StatelessWidget {
                           ],
                         ),
                       ],
-                    ),
-                    SizedBox(
-                      height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -113,19 +114,86 @@ class Transaction extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Icon(
-                          Icons.add_circle_outline_rounded,
-                          size: 30,
-                          color: Colors.white,
-                        ),
+
+                        // Icon(
+                        //   Icons.add_circle_outline_rounded,
+                        //   size: 30,
+                        //   color: Colors.white,
+                        // ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.07,
+                      width: MediaQuery.of(context).size.width * 0.47,
+                      decoration: BoxDecoration(
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(
+                          10,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Total Points",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            "150",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                          // Icon(
+                          //   Icons.add_circle_outline_rounded,
+                          //   size: 30,
+                          //   color: Colors.white,
+                          // ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
+              // ignore: prefer_const_constructors
+              // Calendar(title: "Pick a date"),
+              // TransactionWidget(),
+              SizedBox(
+                height: 19,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 20,
+                    ),
+                  ),
+                  Text(
+                    "Transaction History",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TransactionHistory(),
             ],
           ),
         ),

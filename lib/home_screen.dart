@@ -65,6 +65,7 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
+                        color: Colors.blue,
                       ),
                     ),
                   ],
@@ -92,6 +93,7 @@ class HomeScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.bold,
+                            color: Colors.blue,
                           ),
                         ),
                       ],
