@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:membership_system_1/home_screen.dart';
 
 import 'app_theme.dart';
 import 'splash_animation/splash_animation_screen.dart';
@@ -17,10 +18,11 @@ class MyApp extends StatelessWidget {
       title: 'Membership Apps',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: AppTheme.textTheme ,
+        textTheme: AppTheme.textTheme,
         primarySwatch: Colors.blue,
       ),
-      home: const SplashAnimationScreen(),
+      // home: const SplashAnimationScreen(),
+      home: HomeScreen(),
     );
   }
 }

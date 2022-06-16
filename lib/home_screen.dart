@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:membership_system_1/widget/promotion_slider.dart';
 
+import 'left_sidebar_drawer.dart';
 import 'widget/features_widget.dart';
 import 'widget/highlight_product.dart';
 import 'widget/member_card.dart';
@@ -17,36 +19,47 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: SingleChildScrollView(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Membership Apps",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 55, 78, 96),
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Column(
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(top: 10),
                 ),
-                Row(
-                  // will do drawer widget here
-                  // Display membership app and menu icon
-                  children: [
-                    Icon(
-                      Icons.menu,
-                      size: 30,
-                      color: Colors.black,
-                    ),
-                    SizedBox(
-                      width: 90,
-                    ),
-                    Text(
-                      "MEMBERSHIP APP",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+                // Row(
+                //   // will do drawer widget here
+                //   // Display membership app and menu icon
+                //   children: [
+                //     Icon(
+                //       Icons.menu,
+                //       size: 30,
+                //       color: Colors.black,
+                //     ),
+                //     SizedBox(
+                //       width: 90,
+                //     ),
+                //     Text(
+                //       "MEMBERSHIP APP",
+                //       style: TextStyle(
+                //         fontSize: 20,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ],
+                // ),
+
                 SizedBox(
                   height: 20,
                 ),
@@ -136,6 +149,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      drawer: LeftSideBarDrawer(),
     );
   }
 }
