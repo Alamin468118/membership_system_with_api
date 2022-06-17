@@ -3,7 +3,6 @@ import 'package:membership_system_1/home_screen.dart';
 
 import 'update_profile.dart';
 
-
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -16,7 +15,7 @@ class Profile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 20, top: 20),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(context,

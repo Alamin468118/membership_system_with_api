@@ -24,7 +24,7 @@ class TransactionHistory extends StatelessWidget {
                 'RM 20.00',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
-                  color: Colors.transparent,
+                  color: Color.fromARGB(255, 255, 230, 0),
                 ),
               ),
               subtitle: Text(

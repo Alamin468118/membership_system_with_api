@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/rewardsModel.dart';
+import '../../models/rewardsModel.dart';
 import 'rewards_card.dart';
 
 class GainMorePointWidget extends StatelessWidget {

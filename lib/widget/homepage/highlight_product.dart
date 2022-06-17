@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:membership_system_1/data/categoryData.dart';
 
 import 'highlight_card.dart';
-import '../models/categoryModel.dart';
+import '../../models/categoryModel.dart';
 
 class HighlightProduct extends StatelessWidget {
   HighlightProduct({Key? key}) : super(key: key);

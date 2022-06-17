@@ -5,6 +5,8 @@ import 'package:membership_system_1/home_screen.dart';
 import 'sign_up.dart';
 
 class SignInPage extends StatefulWidget {
+  const SignInPage({Key? key}) : super(key: key);
+
   @override
   _SignInPageState createState() => _SignInPageState();
 }
@@ -147,7 +149,7 @@ class _SignInPageState extends State<SignInPage> {
                     onTap: () {
                       // Link to SignUp Page
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (BuildContext context) => SignUpPage()));
+                          builder: (BuildContext context) => const SignUpPage()));
                     },
                     child: const Text(
                       "Sign up",

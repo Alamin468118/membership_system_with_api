@@ -3,8 +3,7 @@ import 'package:membership_system_1/models/rewardsModel.dart';
 
 import '../../data/rewardsData.dart';
 import '../../home_screen.dart';
-import '../widget/gain_more_points_widget.dart';
-
+import '../widget/rewards/gain_more_points_widget.dart';
 
 class Rewards extends StatelessWidget {
   Rewards({Key? key}) : super(key: key);
@@ -67,7 +66,7 @@ class Rewards extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.25,
                 width: MediaQuery.of(context).size.width * 0.95,
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: const Color.fromARGB(255, 18, 76, 134),
                   borderRadius: BorderRadius.circular(
                     10,
                   ),

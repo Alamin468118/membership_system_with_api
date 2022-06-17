@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:membership_system_1/widget/notification.dart';
+import 'package:membership_system_1/features/notification.dart';
+import 'package:membership_system_1/features/promotion_page.dart';
 
-import 'package:membership_system_1/widget/promotion_slider.dart';
+import 'package:membership_system_1/widget/homepage/promotion_slider.dart';
 
-import 'widget/left_sidebar_drawer.dart';
-import 'widget/features_widget.dart';
-import 'widget/highlight_product.dart';
-import 'widget/member_card.dart';
+import 'widget/homepage/left_sidebar_drawer.dart';
+import 'widget/homepage/features_widget.dart';
+import 'widget/homepage/highlight_product.dart';
+import 'widget/homepage/member_card.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -127,7 +128,12 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Spacer(),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PromotionPage()));
+                      },
                       child: Text(
                         "See All",
                         style: TextStyle(

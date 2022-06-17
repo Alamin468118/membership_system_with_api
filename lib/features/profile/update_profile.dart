@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../home_screen.dart';
 
 import 'profile.dart';
@@ -18,7 +17,7 @@ class UpdateProfile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 20, top: 20),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(context,

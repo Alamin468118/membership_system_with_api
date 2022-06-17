@@ -4,11 +4,9 @@ import 'package:flutter/material.dart';
 
 import 'package:membership_system_1/home_screen.dart';
 
-
-
 import '../../data/rewardsData.dart';
 import '../../models/rewardsModel.dart';
-import '../widget/transaction_history_widget.dart';
+import '../widget/transaction/transaction_history_widget.dart';
 
 class Transaction extends StatelessWidget {
   Transaction({Key? key}) : super(key: key);
@@ -77,10 +75,10 @@ class Transaction extends StatelessWidget {
                 height: 9,
               ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.35,
+                height: MediaQuery.of(context).size.height * 0.30,
                 width: MediaQuery.of(context).size.width * 0.95,
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: const Color.fromARGB(255, 18, 76, 134),
                   borderRadius: BorderRadius.circular(
                     10,
                   ),
@@ -89,35 +87,20 @@ class Transaction extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: MediaQuery.of(context).size.height * 0.10,
-                              width: MediaQuery.of(context).size.width * 0.30,
-                              decoration: const BoxDecoration(
-                                color: Colors.transparent,
-                                shape: BoxShape.circle,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(3.0),
-                              child: Container(
-                                child: const Center(
-                                  child: Text(
-                                    "Total Spend",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          "Total Spend",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
