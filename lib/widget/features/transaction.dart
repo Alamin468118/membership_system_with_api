@@ -4,10 +4,15 @@ import 'package:membership_system_1/home_screen.dart';
 import 'package:membership_system_1/widget/calendar.dart';
 import 'package:membership_system_1/widget/transaction_widget.dart';
 
+import '../../data/rewardsData.dart';
+import '../../models/rewardsModel.dart';
+import '../gain_more_points_widget.dart';
+import '../notification.dart';
 import '../transaction_history_widget.dart';
 
 class Transaction extends StatelessWidget {
-  const Transaction({Key? key}) : super(key: key);
+  Transaction({Key? key}) : super(key: key);
+  final List<RewardsData> _rewardsdata = rewardsdata;
 
   @override
   Widget build(BuildContext context) {
@@ -17,47 +22,58 @@ class Transaction extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(
                   5,
                 ),
               ),
               Row(
                 children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => HomeScreen()));
-                    },
-                    child: Icon(
-                      Icons.arrow_back_ios_new,
-                      size: 20,
-                      color: Colors.black,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()));
+                      },
+                      child: const Icon(
+                        Icons.arrow_back_ios_new,
+                        size: 20,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 90,
                   ),
-                  Text(
+                  const Text(
                     "Account Balance",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 70,
                   ),
-                  Icon(
-                    Icons.notifications_active,
-                    size: 30,
-                    color: Colors.yellow.shade600,
-                  ),
+                  // InkWell(
+                  //   onTap: () {
+                  //     Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //             builder: (context) => AppNotification()));
+                  //   },
+                  //   child: Icon(
+                  //     Icons.notifications_active,
+                  //     size: 30,
+                  //     color: Colors.yellow.shade600,
+                  //   ),
+                  // ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 9,
               ),
               Container(
@@ -79,7 +95,7 @@ class Transaction extends StatelessWidget {
                             Container(
                               height: MediaQuery.of(context).size.height * 0.10,
                               width: MediaQuery.of(context).size.width * 0.30,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Colors.transparent,
                                 shape: BoxShape.circle,
                               ),
@@ -87,7 +103,7 @@ class Transaction extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(3.0),
                               child: Container(
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     "Current Balance",
                                     style: TextStyle(
@@ -105,7 +121,7 @@ class Transaction extends StatelessWidget {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text(
                           "RM 200.00",
                           style: TextStyle(
@@ -122,7 +138,7 @@ class Transaction extends StatelessWidget {
                         // ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
@@ -136,7 +152,7 @@ class Transaction extends StatelessWidget {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
+                        children: const [
                           Text(
                             "Total Points",
                             style: TextStyle(
@@ -170,11 +186,11 @@ class Transaction extends StatelessWidget {
               // ignore: prefer_const_constructors
               // Calendar(title: "Pick a date"),
               // TransactionWidget(),
-              SizedBox(
+              const SizedBox(
                 height: 19,
               ),
               Row(
-                children: [
+                children: const [
                   Padding(
                     padding: EdgeInsets.only(
                       left: 20,
@@ -190,10 +206,34 @@ class Transaction extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              TransactionHistory(),
+              const TransactionHistory(),
+              const SizedBox(
+                height: 19,
+              ),
+              // Row(
+              //   children: [
+              //     Padding(
+              //       padding: const EdgeInsets.only(
+              //         left: 20,
+              //       ),
+              //     ),
+              //     Text(
+              //       "More Points Rewards",
+              //       style: TextStyle(
+              //         fontSize: 20,
+              //         fontWeight: FontWeight.bold,
+              //         color: Colors.blue,
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // const SizedBox(
+              //   height: 10,
+              // ),
+              // GainMorePointWidget(rewardsdata: _rewardsdata),
             ],
           ),
         ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:membership_system_1/models/categoryModel.dart';
+import 'package:membership_system_1/widget/membership_category.dart';
 
 class HighlightCard extends StatelessWidget {
   HighlightCard(
@@ -19,30 +21,40 @@ class HighlightCard extends StatelessWidget {
       child: Card(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: Row(
-            children: <Widget>[
-              Image.asset(
-                imagePath,
-                height: 55.0,
-                width: 55.0,
-              ),
-              SizedBox(
-                width: 15,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    categoryName,
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MembershipCategory(),
+                ),
+              );
+            },
+            child: Row(
+              children: <Widget>[
+                Image.asset(
+                  imagePath,
+                  height: 65.0,
+                  width: 55.0,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      categoryName,
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Text("$noOfItem items"),
-                ],
-              )
-            ],
+                    Text("$noOfItem items"),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

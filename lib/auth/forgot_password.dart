@@ -5,7 +5,7 @@ class ForgotPassword extends StatelessWidget {
   const ForgotPassword({Key? key}) : super(key: key);
   Widget _buildTextEmail() {
     return TextFormField(
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         hintText: "Email or Username",
         hintStyle: TextStyle(
           color: Color(0xFFBDC2CB),
@@ -25,17 +25,17 @@ class ForgotPassword extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 "Forget Password",
                 style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 90.0,
               ),
               Card(
                 elevation: 5.0,
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: <Widget>[
                       _buildTextEmail(),
@@ -43,7 +43,7 @@ class ForgotPassword extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               GestureDetector(
@@ -57,7 +57,7 @@ class ForgotPassword extends StatelessWidget {
                     borderRadius: BorderRadius.circular(35.0),
                     color: Colors.blue,
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Submit",
                       style: TextStyle(
@@ -69,7 +69,7 @@ class ForgotPassword extends StatelessWidget {
                   ),
                 ),
               ),
-              Divider(
+              const Divider(
                 height: 20.0,
               ),
             ],

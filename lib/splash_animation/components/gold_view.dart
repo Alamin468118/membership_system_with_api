@@ -9,10 +9,10 @@ class GoldView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _firstHalfAnimation =
-        Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(1, 0), end: const Offset(0, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.2,
           0.4,
           curve: Curves.fastOutSlowIn,
@@ -20,10 +20,10 @@ class GoldView extends StatelessWidget {
       ),
     );
     final _secondHalfAnimation =
-        Tween<Offset>(begin: Offset(0, 0), end: Offset(-1, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-1, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           0.6,
           curve: Curves.fastOutSlowIn,
@@ -31,10 +31,10 @@ class GoldView extends StatelessWidget {
       ),
     );
     final _sportsFirstHalfAnimation =
-        Tween<Offset>(begin: Offset(2, 0), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(2, 0), end: const Offset(0, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.2,
           0.4,
           curve: Curves.fastOutSlowIn,
@@ -42,10 +42,10 @@ class GoldView extends StatelessWidget {
       ),
     );
     final _sportsSecondHalfAnimation =
-        Tween<Offset>(begin: Offset(0, 0), end: Offset(-2, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-2, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           0.6,
           curve: Curves.fastOutSlowIn,
@@ -54,10 +54,10 @@ class GoldView extends StatelessWidget {
     );
 
     final _imageFirstHalfAnimation =
-        Tween<Offset>(begin: Offset(4, 0), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(4, 0), end: const Offset(0, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.2,
           0.4,
           curve: Curves.fastOutSlowIn,
@@ -65,10 +65,10 @@ class GoldView extends StatelessWidget {
       ),
     );
     final _imageSecondHalfAnimation =
-        Tween<Offset>(begin: Offset(0, 0), end: Offset(-4, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-4, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           0.6,
           curve: Curves.fastOutSlowIn,
@@ -89,14 +89,14 @@ class GoldView extends StatelessWidget {
                 position: _sportsFirstHalfAnimation,
                 child: SlideTransition(
                   position: _sportsSecondHalfAnimation,
-                  child: Text(
+                  child: const Text(
                     "GOLD",
                     style:
-                        TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
+                        const TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
-              Padding(
+              const Padding(
                 padding:
                     EdgeInsets.only(left: 64, right: 64, bottom: 16, top: 16),
                 child: Text(
@@ -109,7 +109,7 @@ class GoldView extends StatelessWidget {
                 child: SlideTransition(
                   position: _imageSecondHalfAnimation,
                   child: Container(
-                    constraints: BoxConstraints(maxWidth: 350, maxHeight: 250),
+                    constraints: const BoxConstraints(maxWidth: 350, maxHeight: 250),
                     child: Image.asset(
                       'assets/images/membership/gold.jpg',
                       fit: BoxFit.contain,

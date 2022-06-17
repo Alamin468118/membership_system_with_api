@@ -14,10 +14,10 @@ class _SplashViewState extends State<SplashView> {
   @override
   Widget build(BuildContext context) {
     final _introductionanimation =
-        Tween<Offset>(begin: Offset(0, 0), end: Offset(0.0, -1.0))
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(0.0, -1.0))
             .animate(CurvedAnimation(
       parent: widget.animationController,
-      curve: Interval(
+      curve: const Interval(
         0.0,
         0.2,
         curve: Curves.fastOutSlowIn,
@@ -35,21 +35,21 @@ class _SplashViewState extends State<SplashView> {
                 fit: BoxFit.cover,
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+            const Padding(
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
               child: Text(
                 "Company Name",
                 style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 64, right: 64),
+            const Padding(
+              padding: const EdgeInsets.only(left: 64, right: 64),
               child: Text(
                 "We care of our product quality and service. \n We are always ready to help you.",
                 textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 48,
             ),
             Padding(
@@ -61,7 +61,7 @@ class _SplashViewState extends State<SplashView> {
                 },
                 child: Container(
                   height: 58,
-                  padding: EdgeInsets.only(
+                  padding: const EdgeInsets.only(
                     left: 56.0,
                     right: 56.0,
                     top: 16,
@@ -69,11 +69,11 @@ class _SplashViewState extends State<SplashView> {
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(38.0),
-                    color: Color(0xff132137),
+                    color: const Color(0xff132137),
                   ),
-                  child: Text(
+                  child: const Text(
                     "Let's begin",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       color: Colors.white,
                     ),

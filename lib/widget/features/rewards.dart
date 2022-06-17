@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:membership_system_1/models/rewardsModel.dart';
-import 'package:membership_system_1/widget/rewards_card.dart';
 
 import '../../data/rewardsData.dart';
 import '../../home_screen.dart';
+import '../gain_more_points_widget.dart';
 
 class Rewards extends StatelessWidget {
   Rewards({Key? key}) : super(key: key);
@@ -16,47 +16,50 @@ class Rewards extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(
                   5,
                 ),
               ),
               Row(
                 children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => HomeScreen()));
-                    },
-                    child: Icon(
-                      Icons.arrow_back_ios_new,
-                      size: 20,
-                      color: Colors.black,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()));
+                      },
+                      child: const Icon(
+                        Icons.arrow_back_ios_new,
+                        size: 20,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 120,
                   ),
-                  Text(
+                  const Text(
                     "Rewards",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
-                    width: 130,
-                  ),
-                  Icon(
-                    Icons.notifications_active,
-                    size: 30,
-                    color: Colors.yellow.shade600,
-                  ),
+                  // const SizedBox(
+                  //   width: 130,
+                  // ),
+                  // Icon(
+                  //   Icons.notifications_active,
+                  //   size: 30,
+                  //   color: Colors.yellow.shade600,
+                  // ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 9,
               ),
               Container(
@@ -78,7 +81,7 @@ class Rewards extends StatelessWidget {
                             Container(
                               height: MediaQuery.of(context).size.height * 0.10,
                               width: MediaQuery.of(context).size.width * 0.30,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Colors.transparent,
                                 shape: BoxShape.circle,
                               ),
@@ -88,7 +91,7 @@ class Rewards extends StatelessWidget {
                               child: Container(
                                 child: Center(
                                   child: Row(
-                                    children: [
+                                    children: const [
                                       Text(
                                         "Points Balance",
                                         style: TextStyle(
@@ -120,18 +123,18 @@ class Rewards extends StatelessWidget {
               // ignore: prefer_const_constructors
               // Calendar(title: "Pick a date"),
               // TransactionWidget(),
-              SizedBox(
+              const SizedBox(
                 height: 19,
               ),
               Row(
-                children: [
+                children: const [
                   Padding(
                     padding: EdgeInsets.only(
                       left: 20,
                     ),
                   ),
                   Text(
-                    "More Points Rewards",
+                    "More Rewards",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -140,31 +143,10 @@ class Rewards extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 10,
+              const SizedBox(
+                height: 15,
               ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.45,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(
-                    10,
-                  ),
-                ),
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: _rewardsdata.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return RewardCard(
-                      RewardsName: _rewardsdata[index].RewardsName,
-                      // imagePath: _rewardsdata[index].imagePath,
-                      points: _rewardsdata[index].points,
-                      price: _rewardsdata[index].price,
-                    );
-                  },
-                ),
-              ),
+              GainMorePointWidget(rewardsdata: _rewardsdata),
             ],
           ),
         ),

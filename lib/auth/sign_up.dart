@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'sign_in.dart';
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
+
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }

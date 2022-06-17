@@ -11,7 +11,7 @@ class TransactionHistory extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.45,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        color: Colors.amber,
+        color: Colors.transparent,
         borderRadius: BorderRadius.circular(
           10,
         ),
@@ -24,7 +24,7 @@ class TransactionHistory extends StatelessWidget {
                 'RM 20.00',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
-                  color: Color.fromARGB(255, 255, 230, 0),
+                  color: Colors.transparent,
                 ),
               ),
               subtitle: Text(

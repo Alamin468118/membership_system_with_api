@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:membership_system_1/home_screen.dart';
-import 'package:membership_system_1/profile/update_profile.dart';
+import 'package:membership_system_1/profile/profile.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+import '../home_screen.dart';
+
+class UpdateProfile extends StatelessWidget {
+  const UpdateProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Update profile
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -39,16 +41,29 @@ class Profile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.20,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/images/profile/personIcon.png'),
-                          fit: BoxFit.fill,
+                    Row(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.20,
+                          width: MediaQuery.of(context).size.width * 0.60,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                  'assets/images/profile/personIcon.png'),
+                              fit: BoxFit.fill,
+                            ),
+                            shape: BoxShape.circle,
+                          ),
                         ),
-                        shape: BoxShape.circle,
-                      ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Icon(
+                          Icons.edit,
+                          size: 30,
+                          color: Colors.grey.shade400,
+                        )
+                      ],
                     ),
                   ],
                 ),
@@ -216,30 +231,59 @@ class Profile extends StatelessWidget {
                       const SizedBox(
                         height: 55,
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => UpdateProfile()));
-                        },
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 0.065,
-                          width: MediaQuery.of(context).size.width * 0.70,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(35.0),
-                            color: Colors.blue,
-                          ),
-                          child: const Center(
-                            child: Text(
-                              "Update Profile",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
+                      Center(
+                        child: Row(
+                          children: [
+                            Container(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.065,
+                              width: MediaQuery.of(context).size.width * 0.35,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(35.0),
+                                color: Colors.grey.shade300,
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  "Edit",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Profile()));
+                              },
+                              child: Container(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.065,
+                                width: MediaQuery.of(context).size.width * 0.35,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(35.0),
+                                  color: Colors.blue,
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    "Save",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

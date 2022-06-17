@@ -22,7 +22,7 @@ class _SplashAnimationScreenState extends State<SplashAnimationScreen>
   @override
   void initState() {
     _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 10));
+        AnimationController(vsync: this, duration: const Duration(seconds: 10));
     _animationController?.animateTo(0.0);
     super.initState();
   }
@@ -73,7 +73,7 @@ class _SplashAnimationScreenState extends State<SplashAnimationScreen>
 
   void _onSkipClick() {
     _animationController?.animateTo(0.8,
-        duration: Duration(milliseconds: 1200));
+        duration: const Duration(milliseconds: 1200));
   }
 
   void _onBackClick() {

@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class RewardCard extends StatelessWidget {
   const RewardCard(
       {Key? key,
-      required this.RewardsName,
-      // required this.imagePath,
+      required this.rewardsName,
+      required this.imagePath,
       required this.points,
       required this.price})
       : super(key: key);
-  final String RewardsName;
-  // final String imagePath;
+  final String rewardsName;
+  final String imagePath;
   final int points;
   final int price;
 
@@ -17,34 +17,67 @@ class RewardCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 20),
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: Row(
-            children: <Widget>[
-              // Image.asset(
-              //   imagePath,
-              //   height: MediaQuery.of(context).size.height * 0.1,
-              //   width: MediaQuery.of(context).size.width,
-              // ),
-              SizedBox(
-                width: 15,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    RewardsName,
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.65,
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Column(
+              children: <Widget>[
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      rewardsName,
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
                     ),
-                  ),
-                  Text("RM $price"),
-                  Text("$points points"),
-                ],
-              )
-            ],
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Image(
+                  image: AssetImage(imagePath),
+                  height: MediaQuery.of(context).size.height * 0.17,
+                  width: MediaQuery.of(context).size.width / 2,
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Example photo",
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text("RM $price",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        )),
+                    Text("$points points",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        )),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

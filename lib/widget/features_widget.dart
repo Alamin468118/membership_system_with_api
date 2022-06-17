@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:membership_system_1/widget/features/promotion_page.dart';
 import 'package:membership_system_1/widget/features/transaction.dart';
 
 import 'package:membership_system_1/widget/features/product.dart';
@@ -12,13 +13,13 @@ class FeaturesWidget extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.137,
       width: MediaQuery.of(context).size.width * 0.89,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.zero,
       ),
       child: GridView.count(
         primary: false,
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
         crossAxisCount: 4,
@@ -39,7 +40,7 @@ class FeaturesWidget extends StatelessWidget {
                   Container(
                     height: MediaQuery.of(context).size.height *
                         0.079, // set height image deposit
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.zero,
                       image: DecorationImage(
@@ -50,17 +51,15 @@ class FeaturesWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 2,
                   ),
-                  Container(
-                    child: const Text(
-                      "Transaction",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                  const Text(
+                    "Transaction",
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
                   ),
                 ],
@@ -73,7 +72,7 @@ class FeaturesWidget extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Product(),
+                  builder: (context) => const Product(),
                 ),
               );
             },
@@ -83,7 +82,7 @@ class FeaturesWidget extends StatelessWidget {
                   Container(
                     height: MediaQuery.of(context).size.height *
                         0.079, //set height of image products
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.zero,
                       image: DecorationImage(
@@ -93,17 +92,15 @@ class FeaturesWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 2,
                   ),
-                  Container(
-                    child: const Text(
-                      "Products",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                  const Text(
+                    "Products",
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
                   ),
                 ],
@@ -120,37 +117,35 @@ class FeaturesWidget extends StatelessWidget {
                 ),
               );
             },
-            child: Container(
-              child: Column(
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height *
-                        0.079, // set height of image Rewards
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.zero,
-                      image: DecorationImage(
-                        image: AssetImage(
-                            "assets/images/featured_images/rewards.png"),
-                        fit: BoxFit.fill,
-                      ),
+            child: Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height *
+                      0.079, // set height of image Rewards
+                  decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.zero,
+                    image: DecorationImage(
+                      image: AssetImage(
+                          "assets/images/featured_images/rewards.png"),
+                      fit: BoxFit.fill,
                     ),
                   ),
-                  SizedBox(
-                    height: 2,
-                  ),
-                  Container(
-                    child: const Text(
-                      "Rewards",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                ),
+                const SizedBox(
+                  height: 2,
+                ),
+                Container(
+                  child: const Text(
+                    "Rewards",
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           GestureDetector(
@@ -159,41 +154,37 @@ class FeaturesWidget extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Product(),
+                  builder: (context) => const PromotionPage(),
                 ),
               );
             },
-            child: Container(
-              child: Column(
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height *
-                        0.079, //set height of image promotion
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.zero,
-                      image: DecorationImage(
-                        image: AssetImage(
-                            "assets/images/featured_images/coupon.png"),
-                        fit: BoxFit.fill,
-                      ),
+            child: Column(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height *
+                      0.079, //set height of image promotion
+                  decoration: const BoxDecoration(
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.zero,
+                    image: DecorationImage(
+                      image: AssetImage(
+                          "assets/images/featured_images/coupon.png"),
+                      fit: BoxFit.fill,
                     ),
                   ),
-                  SizedBox(
-                    height: 2,
+                ),
+                const SizedBox(
+                  height: 2,
+                ),
+                const Text(
+                  "Promotion",
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
-                  Container(
-                    child: const Text(
-                      "Promotion",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

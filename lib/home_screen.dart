@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:membership_system_1/widget/notification.dart';
 
 import 'package:membership_system_1/widget/promotion_slider.dart';
 
@@ -20,14 +21,27 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
         title: Text(
-          "Membership Apps",
+          "MEMBERSHIP APPS",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 55, 78, 96),
+        backgroundColor: Colors.white,
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.notifications_active,
+              color: Colors.yellow,
+            ),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AppNotification()));
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -61,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                 // ),
 
                 SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 MemberCard(),
                 SizedBox(
@@ -74,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Offers available",
+                      "Offers Available for Membership",
                       style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,

@@ -12,7 +12,7 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   Widget _buildTextEmail() {
     return TextFormField(
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         hintText: "Email or Username",
         hintStyle: TextStyle(
           color: Color(0xFFBDC2CB),
@@ -28,12 +28,12 @@ class _SignInPageState extends State<SignInPage> {
     return TextFormField(
       decoration: InputDecoration(
         hintText: "Password",
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: Color(0xFFBDC2CB),
           fontSize: 18.0,
         ),
         suffixIcon: IconButton(
-          icon: _passVis ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
+          icon: _passVis ? const Icon(Icons.visibility_off) : const Icon(Icons.visibility),
           onPressed: () {
             setState(() {
               _passVis = !_passVis;
@@ -55,21 +55,21 @@ class _SignInPageState extends State<SignInPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 "Sign In",
                 style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 90.0,
               ),
               Card(
                 elevation: 5.0,
                 child: Padding(
-                  padding: EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: <Widget>[
                       _buildTextEmail(),
-                      SizedBox(
+                      const SizedBox(
                         height: 20.0,
                       ),
                       _buildTextPass(),
@@ -77,7 +77,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               Row(
@@ -88,9 +88,9 @@ class _SignInPageState extends State<SignInPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ForgotPassword()));
+                              builder: (context) => const ForgotPassword()));
                     },
-                    child: Text(
+                    child: const Text(
                       "Forgot Password ?",
                       style: TextStyle(
                           color: Colors.blue,
@@ -100,7 +100,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30.0,
               ),
               GestureDetector(
@@ -114,7 +114,7 @@ class _SignInPageState extends State<SignInPage> {
                     borderRadius: BorderRadius.circular(35.0),
                     color: Colors.blue,
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Sign In",
                       style: TextStyle(
@@ -126,13 +126,13 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
               ),
-              Divider(
+              const Divider(
                 height: 20.0,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     "Don't have an account?",
                     style: TextStyle(
                       color: Color(0xFFBDC2CB),
@@ -140,7 +140,7 @@ class _SignInPageState extends State<SignInPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10.0,
                   ),
                   InkWell(
@@ -149,7 +149,7 @@ class _SignInPageState extends State<SignInPage> {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (BuildContext context) => SignUpPage()));
                     },
-                    child: Text(
+                    child: const Text(
                       "Sign up",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,

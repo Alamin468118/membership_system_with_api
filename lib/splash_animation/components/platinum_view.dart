@@ -9,10 +9,10 @@ class PlatinumView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _firstHalfAnimation =
-        Tween<Offset>(begin: Offset(1, 0), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(1, 0), end: const Offset(0, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           0.6,
           curve: Curves.fastOutSlowIn,
@@ -20,10 +20,10 @@ class PlatinumView extends StatelessWidget {
       ),
     );
     final _secondHalfAnimation =
-        Tween<Offset>(begin: Offset(0, 0), end: Offset(-1, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-1, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.6,
           0.8,
           curve: Curves.fastOutSlowIn,
@@ -32,10 +32,10 @@ class PlatinumView extends StatelessWidget {
     );
 
     final _moodFirstHalfAnimation =
-        Tween<Offset>(begin: Offset(2, 0), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(2, 0), end: const Offset(0, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           0.6,
           curve: Curves.fastOutSlowIn,
@@ -43,10 +43,10 @@ class PlatinumView extends StatelessWidget {
       ),
     );
     final _moodSecondHalfAnimation =
-        Tween<Offset>(begin: Offset(0, 0), end: Offset(-2, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-2, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.6,
           0.8,
           curve: Curves.fastOutSlowIn,
@@ -54,10 +54,10 @@ class PlatinumView extends StatelessWidget {
       ),
     );
     final _imageFirstHalfAnimation =
-        Tween<Offset>(begin: Offset(4, 0), end: Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(4, 0), end: const Offset(0, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.4,
           0.6,
           curve: Curves.fastOutSlowIn,
@@ -65,10 +65,10 @@ class PlatinumView extends StatelessWidget {
       ),
     );
     final _imageSecondHalfAnimation =
-        Tween<Offset>(begin: Offset(0, 0), end: Offset(-4, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, 0), end: const Offset(-4, 0)).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(
+        curve: const Interval(
           0.6,
           0.8,
           curve: Curves.fastOutSlowIn,
@@ -85,7 +85,7 @@ class PlatinumView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 "Platinum",
                 style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
               ),
@@ -93,7 +93,7 @@ class PlatinumView extends StatelessWidget {
                 position: _moodFirstHalfAnimation,
                 child: SlideTransition(
                   position: _moodSecondHalfAnimation,
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.only(
                         left: 64, right: 64, top: 16, bottom: 16),
                     child: Text(
@@ -108,7 +108,7 @@ class PlatinumView extends StatelessWidget {
                 child: SlideTransition(
                   position: _imageSecondHalfAnimation,
                   child: Container(
-                    constraints: BoxConstraints(maxWidth: 350, maxHeight: 250),
+                    constraints: const BoxConstraints(maxWidth: 350, maxHeight: 250),
                     child: Image.asset(
                       'assets/images/membership/platinum.jpg',
                       fit: BoxFit.contain,
