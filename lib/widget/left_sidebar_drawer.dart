@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'about_us.dart';
-import 'auth/sign_in.dart';
-import 'feedback.dart';
-import 'home_screen.dart';
-import 'profile/profile.dart';
+import '../features/about_us.dart';
+import '../auth/sign_in.dart';
+import '../features/feedback.dart';
+import '../features/profile/profile.dart';
+import '../home_screen.dart';
 
 class LeftSideBarDrawer extends StatelessWidget {
   const LeftSideBarDrawer({
@@ -33,7 +33,8 @@ class LeftSideBarDrawer extends StatelessWidget {
                 'HOME',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w400,
                   color: Colors.black,
                 ),
               ),
@@ -54,7 +55,8 @@ class LeftSideBarDrawer extends StatelessWidget {
                 'Profile',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w400,
                   color: Colors.black,
                 ),
               ),
@@ -79,7 +81,8 @@ class LeftSideBarDrawer extends StatelessWidget {
                 'Feedback',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w400,
                   color: Colors.black,
                 ),
               ),
@@ -104,7 +107,8 @@ class LeftSideBarDrawer extends StatelessWidget {
                 'About us',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w400,
                   color: Colors.black,
                 ),
               ),
@@ -124,13 +128,17 @@ class LeftSideBarDrawer extends StatelessWidget {
               // },
               ),
           ListTile(
-              leading: const Icon(Icons.exit_to_app),
+              leading: const Icon(
+                Icons.power_settings_new,
+                color: Colors.red,
+              ),
               title: const Text(
                 'Log Out',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w400,
+                  color: Colors.red,
                 ),
               ),
               onTap: () {

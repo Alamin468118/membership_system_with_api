@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../home_screen.dart';
+
 class PromotionPage extends StatelessWidget {
   const PromotionPage({Key? key}) : super(key: key);
 
@@ -12,17 +14,49 @@ class PromotionPage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: MediaQuery.of(context).size.height * 0.20,
+                height: MediaQuery.of(context).size.height * 0.05,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
+                decoration: const BoxDecoration(
+                  color: Colors.transparent,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(15),
                     bottomRight: Radius.circular(15),
                   ),
                 ),
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
+                        },
+                        child: const Icon(
+                          Icons.arrow_back_ios_new,
+                          size: 20,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 95,
+                    ),
+                    Text(
+                      "Promotion",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.yellow,
+                        fontFamily: "Roboto",
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Container(
@@ -43,7 +77,7 @@ class PromotionPage extends StatelessWidget {
                                 height:
                                     MediaQuery.of(context).size.height * 0.25,
                                 width: MediaQuery.of(context).size.width * 0.47,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(
                                         'assets/images/promotion/50%_promotion.png'),
@@ -51,7 +85,7 @@ class PromotionPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Padding(
@@ -61,18 +95,19 @@ class PromotionPage extends StatelessWidget {
                                       MediaQuery.of(context).size.height * 0.20,
                                   width:
                                       MediaQuery.of(context).size.width * 0.34,
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Column(
                                     children: [
-                                      Text(
+                                      const Text(
                                         "50% OFF For selected item",
                                         style: TextStyle(
                                           fontSize: 17,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black,
+                                          fontFamily: "WorkSans",
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Padding(
@@ -81,35 +116,37 @@ class PromotionPage extends StatelessWidget {
                                         child: Container(
                                           height: 30,
                                           width: 100,
-                                          child: Text(
+                                          child: const Text(
                                             "Claim now with 20points",
                                             style: TextStyle(
                                               fontSize: 10,
                                               fontWeight: FontWeight.bold,
+                                              fontFamily: "WorkSans",
                                               color: Color.fromARGB(
                                                   255, 182, 167, 1),
                                             ),
                                           ),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Container(
                                         height: 25,
                                         width: 250,
                                         decoration: BoxDecoration(
-                                          color:
-                                              Color.fromARGB(255, 235, 44, 6),
+                                          color: const Color.fromARGB(
+                                              255, 235, 44, 6),
                                           borderRadius:
                                               BorderRadius.circular(10),
                                         ),
-                                        child: Center(
+                                        child: const Center(
                                           child: Text(
                                             "Claim Now",
                                             style: TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.bold,
+                                              fontFamily: "Roboto",
                                               color: Colors.white,
                                             ),
                                           ),
@@ -127,7 +164,7 @@ class PromotionPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 9,
               ),
               Container(
@@ -148,7 +185,7 @@ class PromotionPage extends StatelessWidget {
                                 height:
                                     MediaQuery.of(context).size.height * 0.25,
                                 width: MediaQuery.of(context).size.width * 0.47,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(
                                         'assets/images/promotion/promotion.jpg'),
@@ -156,7 +193,7 @@ class PromotionPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Padding(
@@ -166,18 +203,19 @@ class PromotionPage extends StatelessWidget {
                                       MediaQuery.of(context).size.height * 0.20,
                                   width:
                                       MediaQuery.of(context).size.width * 0.34,
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Column(
                                     children: [
-                                      Text(
+                                      const Text(
                                         "20% OFF for lifestyle products",
                                         style: TextStyle(
                                           fontSize: 17,
                                           fontWeight: FontWeight.bold,
+                                          fontFamily: "WorkSans",
                                           color: Colors.black,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Padding(
@@ -186,35 +224,37 @@ class PromotionPage extends StatelessWidget {
                                         child: Container(
                                           height: 30,
                                           width: 100,
-                                          child: Text(
+                                          child: const Text(
                                             "Claim now with 30points",
                                             style: TextStyle(
                                               fontSize: 10,
                                               fontWeight: FontWeight.bold,
+                                              fontFamily: "WorkSans",
                                               color: Color.fromARGB(
                                                   255, 182, 167, 1),
                                             ),
                                           ),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Container(
                                         height: 25,
                                         width: 250,
                                         decoration: BoxDecoration(
-                                          color:
-                                              Color.fromARGB(255, 235, 44, 6),
+                                          color: const Color.fromARGB(
+                                              255, 235, 44, 6),
                                           borderRadius:
                                               BorderRadius.circular(10),
                                         ),
-                                        child: Center(
+                                        child: const Center(
                                           child: Text(
                                             "Claim Now",
                                             style: TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.bold,
+                                              fontFamily: "Roboto",
                                               color: Colors.white,
                                             ),
                                           ),
@@ -232,7 +272,7 @@ class PromotionPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 9,
               ),
               Container(
@@ -253,7 +293,7 @@ class PromotionPage extends StatelessWidget {
                                 height:
                                     MediaQuery.of(context).size.height * 0.25,
                                 width: MediaQuery.of(context).size.width * 0.47,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(
                                         'assets/images/promotion/sale_promotion.jpg'),
@@ -261,7 +301,7 @@ class PromotionPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Padding(
@@ -271,18 +311,19 @@ class PromotionPage extends StatelessWidget {
                                       MediaQuery.of(context).size.height * 0.20,
                                   width:
                                       MediaQuery.of(context).size.width * 0.34,
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Column(
                                     children: [
-                                      Text(
+                                      const Text(
                                         "70% OFF For selected item",
                                         style: TextStyle(
                                           fontSize: 17,
                                           fontWeight: FontWeight.bold,
+                                          fontFamily: "WorkSans",
                                           color: Colors.black,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Padding(
@@ -291,35 +332,37 @@ class PromotionPage extends StatelessWidget {
                                         child: Container(
                                           height: 30,
                                           width: 100,
-                                          child: Text(
+                                          child: const Text(
                                             "Claim now with 90points",
                                             style: TextStyle(
                                               fontSize: 10,
                                               fontWeight: FontWeight.bold,
+                                              fontFamily: "WorkSans",
                                               color: Color.fromARGB(
                                                   255, 182, 167, 1),
                                             ),
                                           ),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Container(
                                         height: 25,
                                         width: 250,
                                         decoration: BoxDecoration(
-                                          color:
-                                              Color.fromARGB(255, 235, 44, 6),
+                                          color: const Color.fromARGB(
+                                              255, 235, 44, 6),
                                           borderRadius:
                                               BorderRadius.circular(10),
                                         ),
-                                        child: Center(
+                                        child: const Center(
                                           child: Text(
                                             "Claim Now",
                                             style: TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.bold,
+                                              fontFamily: "Roboto",
                                               color: Colors.white,
                                             ),
                                           ),
@@ -337,7 +380,7 @@ class PromotionPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 9,
               ),
               Container(
@@ -358,7 +401,7 @@ class PromotionPage extends StatelessWidget {
                                 height:
                                     MediaQuery.of(context).size.height * 0.25,
                                 width: MediaQuery.of(context).size.width * 0.47,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(
                                       "assets/images/promotion/friend.png",
@@ -367,7 +410,7 @@ class PromotionPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Padding(
@@ -377,18 +420,19 @@ class PromotionPage extends StatelessWidget {
                                       MediaQuery.of(context).size.height * 0.20,
                                   width:
                                       MediaQuery.of(context).size.width * 0.34,
-                                  decoration: BoxDecoration(),
+                                  decoration: const BoxDecoration(),
                                   child: Column(
                                     children: [
-                                      Text(
+                                      const Text(
                                         "50% OFF For selected item",
                                         style: TextStyle(
                                           fontSize: 17,
                                           fontWeight: FontWeight.bold,
+                                          fontFamily: "WorkSans",
                                           color: Colors.black,
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Padding(
@@ -397,35 +441,37 @@ class PromotionPage extends StatelessWidget {
                                         child: Container(
                                           height: 30,
                                           width: 100,
-                                          child: Text(
+                                          child: const Text(
                                             "Claim now with 20points",
                                             style: TextStyle(
                                               fontSize: 10,
                                               fontWeight: FontWeight.bold,
+                                              fontFamily: "WorkSans",
                                               color: Color.fromARGB(
                                                   255, 182, 167, 1),
                                             ),
                                           ),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Container(
                                         height: 25,
                                         width: 250,
                                         decoration: BoxDecoration(
-                                          color:
-                                              Color.fromARGB(255, 235, 44, 6),
+                                          color: const Color.fromARGB(
+                                              255, 235, 44, 6),
                                           borderRadius:
                                               BorderRadius.circular(10),
                                         ),
-                                        child: Center(
+                                        child: const Center(
                                           child: Text(
                                             "Claim Now",
                                             style: TextStyle(
                                               fontSize: 15,
                                               fontWeight: FontWeight.bold,
+                                              fontFamily: "Roboto",
                                               color: Colors.white,
                                             ),
                                           ),

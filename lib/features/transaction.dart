@@ -1,14 +1,14 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
-import 'package:membership_system_1/app_theme.dart';
+
 import 'package:membership_system_1/home_screen.dart';
-import 'package:membership_system_1/widget/calendar.dart';
-import 'package:membership_system_1/widget/transaction_widget.dart';
+
+
 
 import '../../data/rewardsData.dart';
 import '../../models/rewardsModel.dart';
-import '../gain_more_points_widget.dart';
-import '../notification.dart';
-import '../transaction_history_widget.dart';
+import '../widget/transaction_history_widget.dart';
 
 class Transaction extends StatelessWidget {
   Transaction({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class Transaction extends StatelessWidget {
                     width: 90,
                   ),
                   const Text(
-                    "Account Balance",
+                    "Transaction",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -77,7 +77,7 @@ class Transaction extends StatelessWidget {
                 height: 9,
               ),
               Container(
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.35,
                 width: MediaQuery.of(context).size.width * 0.95,
                 decoration: BoxDecoration(
                   color: Colors.black,
@@ -105,7 +105,7 @@ class Transaction extends StatelessWidget {
                               child: Container(
                                 child: const Center(
                                   child: Text(
-                                    "Current Balance",
+                                    "Total Spend",
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
@@ -145,7 +145,7 @@ class Transaction extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.07,
                       width: MediaQuery.of(context).size.width * 0.47,
                       decoration: BoxDecoration(
-                        color: Colors.amber,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(
                           10,
                         ),
@@ -158,18 +158,18 @@ class Transaction extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: Colors.amber,
                             ),
                           ),
                           SizedBox(
                             width: 10,
                           ),
                           Text(
-                            "150",
+                            "200",
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                           ),
                           // Icon(
@@ -180,12 +180,76 @@ class Transaction extends StatelessWidget {
                         ],
                       ),
                     ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.075,
+                      width: MediaQuery.of(context).size.width * 0.95,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade400.withOpacity(0.75),
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.black,
+                            blurRadius: 5,
+                            spreadRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Text(
+                              "Points Expired Date",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white.withOpacity(0.5),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            ":",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white.withOpacity(0.65),
+                            ),
+                          ),
+                          const Spacer(),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 25),
+                            child: Text(
+                              "31 / 01 / 2023",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white.withOpacity(0.65),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
               // ignore: prefer_const_constructors
               // Calendar(title: "Pick a date"),
               // TransactionWidget(),
+              const SizedBox(
+                height: 19,
+              ),
+
               const SizedBox(
                 height: 19,
               ),

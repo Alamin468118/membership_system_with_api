@@ -1,7 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
-import '../../auth/sign_up.dart';
+import '../../../auth/sign_up.dart';
 
 class CenterNextButton extends StatelessWidget {
   final AnimationController animationController;
@@ -13,7 +13,8 @@ class CenterNextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _topMoveAnimation =
-        Tween<Offset>(begin: const Offset(0, 5), end: const Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, 5), end: const Offset(0, 0))
+            .animate(
       CurvedAnimation(
         parent: animationController,
         curve: const Interval(
@@ -34,7 +35,8 @@ class CenterNextButton extends StatelessWidget {
       ),
     );
     final _loginTextMoveAnimation =
-        Tween<Offset>(begin: const Offset(0, 5), end: const Offset(0, 0)).animate(
+        Tween<Offset>(begin: const Offset(0, 5), end: const Offset(0, 0))
+            .animate(
       CurvedAnimation(
         parent: animationController,
         curve: const Interval(
@@ -107,7 +109,8 @@ class CenterNextButton extends StatelessWidget {
                                       const SignUpPage()));
                             },
                             child: Padding(
-                              padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                              padding: const EdgeInsets.only(
+                                  left: 16.0, right: 16.0),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,

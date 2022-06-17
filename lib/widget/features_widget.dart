@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:membership_system_1/widget/features/promotion_page.dart';
-import 'package:membership_system_1/widget/features/transaction.dart';
 
-import 'package:membership_system_1/widget/features/product.dart';
-import 'package:membership_system_1/widget/features/rewards.dart';
+import '../features/product.dart';
+import '../features/promotion_page.dart';
+import '../features/rewards.dart';
+import '../features/transaction.dart';
 
 class FeaturesWidget extends StatelessWidget {
   const FeaturesWidget({Key? key}) : super(key: key);
@@ -58,7 +58,8 @@ class FeaturesWidget extends StatelessWidget {
                     "Transaction",
                     style: TextStyle(
                       fontSize: 12,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: "WorkSans",
+                      fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
@@ -99,7 +100,8 @@ class FeaturesWidget extends StatelessWidget {
                     "Products",
                     style: TextStyle(
                       fontSize: 12,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: "WorkSans",
+                      fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
@@ -140,7 +142,8 @@ class FeaturesWidget extends StatelessWidget {
                     "Rewards",
                     style: TextStyle(
                       fontSize: 12,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: "Worksans",
+                      fontWeight: FontWeight.w600,
                       color: Colors.black,
                     ),
                   ),
@@ -180,7 +183,8 @@ class FeaturesWidget extends StatelessWidget {
                   "Promotion",
                   style: TextStyle(
                     fontSize: 12,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: "WorkSans",
+                    fontWeight: FontWeight.w600,
                     color: Colors.black,
                   ),
                 ),

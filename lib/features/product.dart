@@ -6,8 +6,9 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // product list
-    
-    );
+        // product list
+        // To be finalized either here or in the product list screen or delete this widget
+
+        );
   }
 }

@@ -36,7 +36,8 @@ class MemberCard extends StatelessWidget {
                   text: "Member Card",
                   style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: "WorkSans",
+                    fontWeight: FontWeight.w500,
                     color: Color.fromARGB(255, 249, 249, 247),
                   ),
                 ),
@@ -54,7 +55,8 @@ class MemberCard extends StatelessWidget {
                   text: "Member ",
                   style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: "WorkSans",
+                    fontWeight: FontWeight.w500,
                     color: Color.fromARGB(255, 249, 249, 247),
                   ),
                 ),
@@ -62,7 +64,8 @@ class MemberCard extends StatelessWidget {
                   text: "Name",
                   style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: "WorkSans",
+                    fontWeight: FontWeight.w500,
                     color: Color.fromARGB(255, 249, 249, 247),
                   ),
                 ),
@@ -80,7 +83,8 @@ class MemberCard extends StatelessWidget {
                   text: "1234 **** **** 1234",
                   style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: "Roboto",
+                    fontWeight: FontWeight.w700,
                     color: Colors.white,
                   ),
                 )
@@ -120,11 +124,11 @@ class MemberCard extends StatelessWidget {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Balance: ",
+                            text: "Total spend : ",
                             style: TextStyle(
                               fontSize: 17,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: Colors.black.withOpacity(0.75),
                             ),
                           ),
                           TextSpan(
@@ -132,7 +136,7 @@ class MemberCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 17,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: Colors.black.withOpacity(0.75),
                             ),
                           ),
                         ],
@@ -148,7 +152,7 @@ class MemberCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 17,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: Colors.black.withOpacity(0.75),
                             ),
                           ),
                         ],
@@ -159,11 +163,11 @@ class MemberCard extends StatelessWidget {
                       width: 2,
                     ),
                     Text(
-                      "150",
+                      "200",
                       style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        color: Colors.black.withOpacity(0.75),
                       ),
                     ),
                   ],

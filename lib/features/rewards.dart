@@ -3,7 +3,8 @@ import 'package:membership_system_1/models/rewardsModel.dart';
 
 import '../../data/rewardsData.dart';
 import '../../home_screen.dart';
-import '../gain_more_points_widget.dart';
+import '../widget/gain_more_points_widget.dart';
+
 
 class Rewards extends StatelessWidget {
   Rewards({Key? key}) : super(key: key);

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:membership_system_1/profile/profile.dart';
 
-import '../home_screen.dart';
+
+import '../../home_screen.dart';
+
+import 'profile.dart';
 
 class UpdateProfile extends StatelessWidget {
   const UpdateProfile({Key? key}) : super(key: key);
