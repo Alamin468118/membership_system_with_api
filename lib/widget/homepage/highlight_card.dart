@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:membership_system_1/models/categoryModel.dart';
-import 'package:membership_system_1/widget/membership_category.dart';
+import 'package:membership_system_1/widget/homepage/membership_rebate.dart';
 
 class HighlightCard extends StatelessWidget {
   HighlightCard(
@@ -26,7 +26,7 @@ class HighlightCard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MembershipCategory(),
+                  builder: (context) => MembershipRebate(),
                 ),
               );
             },
