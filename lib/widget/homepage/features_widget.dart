@@ -23,7 +23,7 @@ class FeaturesWidget extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          crossAxisCount: 4,
+          crossAxisCount: 3,
           children: <Widget>[
             GestureDetector(
               // Transaction
@@ -69,49 +69,49 @@ class FeaturesWidget extends StatelessWidget {
                 ),
               ),
             ),
-            GestureDetector(
-              // products
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Product(),
-                  ),
-                );
-              },
-              child: Container(
-                child: Column(
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height *
-                          0.069, //set height of image products
-                      width: MediaQuery.of(context).size.width * 0.13,
-                      decoration: const BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.zero,
-                        image: DecorationImage(
-                          image: AssetImage(
-                              "assets/images/featured_images/shopping-basket.png"),
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 2,
-                    ),
-                    const Text(
-                      "Products",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: "WorkSans",
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            // GestureDetector( // reason cancel module
+            //   // products
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => const Product(),
+            //       ),
+            //     );
+            //   },
+            //   child: Container(
+            //     child: Column(
+            //       children: [
+            //         Container(
+            //           height: MediaQuery.of(context).size.height *
+            //               0.069, //set height of image products
+            //           width: MediaQuery.of(context).size.width * 0.13,
+            //           decoration: const BoxDecoration(
+            //             color: Colors.transparent,
+            //             borderRadius: BorderRadius.zero,
+            //             image: DecorationImage(
+            //               image: AssetImage(
+            //                   "assets/images/featured_images/shopping-basket.png"),
+            //               fit: BoxFit.fill,
+            //             ),
+            //           ),
+            //         ),
+            //         const SizedBox(
+            //           height: 2,
+            //         ),
+            //         const Text(
+            //           "Products",
+            //           style: TextStyle(
+            //             fontSize: 12,
+            //             fontFamily: "WorkSans",
+            //             fontWeight: FontWeight.w600,
+            //             color: Colors.black,
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
             GestureDetector(
               // rewards
               onTap: () {
