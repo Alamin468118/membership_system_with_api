@@ -48,8 +48,10 @@ class ForgotPassword extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const SignInPage()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignInPage()));
                 },
                 child: Container(
                   height: 50.0,
@@ -60,6 +62,34 @@ class ForgotPassword extends StatelessWidget {
                   child: const Center(
                     child: Text(
                       "Submit",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15.0,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignInPage()));
+                },
+                child: Container(
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(35.0),
+                    color: Colors.red,
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "cancel",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18.0,

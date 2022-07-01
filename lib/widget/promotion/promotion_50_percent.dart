@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:membership_system_1/widget/promotion/confirmation_page/promotion_of_product_1.dart';
 
 class Promotion50percent extends StatelessWidget {
   const Promotion50percent({
@@ -74,25 +75,34 @@ class Promotion50percent extends StatelessWidget {
                             const SizedBox(
                               height: 5,
                             ),
-                            Container(
-                              height: 25,
-                              width: 250,
-                              decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 235, 44, 6),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  "Claim Now",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "Roboto",
-                                    color: Colors.white,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const PromotionProduct1()));
+                              },
+                              child: Container(
+                                height: 25,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                  color: const Color.fromARGB(255, 235, 44, 6),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    "Claim Now",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Roboto",
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),

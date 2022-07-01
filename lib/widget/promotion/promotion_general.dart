@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:membership_system_1/widget/promotion/confirmation_page/promotion_of_product_2.dart';
 
 class PromotionGeneral extends StatelessWidget {
   const PromotionGeneral({
@@ -22,8 +23,7 @@ class PromotionGeneral extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      height:
-                          MediaQuery.of(context).size.height * 0.25,
+                      height: MediaQuery.of(context).size.height * 0.25,
                       width: MediaQuery.of(context).size.width * 0.47,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
@@ -39,10 +39,8 @@ class PromotionGeneral extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 10),
                       child: Container(
-                        height:
-                            MediaQuery.of(context).size.height * 0.20,
-                        width:
-                            MediaQuery.of(context).size.width * 0.34,
+                        height: MediaQuery.of(context).size.height * 0.20,
+                        width: MediaQuery.of(context).size.width * 0.34,
                         decoration: const BoxDecoration(),
                         child: Column(
                           children: [
@@ -59,8 +57,7 @@ class PromotionGeneral extends StatelessWidget {
                               height: 5,
                             ),
                             Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 10),
+                              padding: const EdgeInsets.only(left: 10),
                               child: Container(
                                 height: 30,
                                 width: 100,
@@ -70,8 +67,7 @@ class PromotionGeneral extends StatelessWidget {
                                     fontSize: 12,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: "WorkSans",
-                                    color: Color.fromARGB(
-                                        255, 182, 167, 1),
+                                    color: Color.fromARGB(255, 182, 167, 1),
                                   ),
                                 ),
                               ),
@@ -79,23 +75,31 @@ class PromotionGeneral extends StatelessWidget {
                             const SizedBox(
                               height: 5,
                             ),
-                            Container(
-                              height: 25,
-                              width: 250,
-                              decoration: BoxDecoration(
-                                color: const Color.fromARGB(
-                                    255, 235, 44, 6),
-                                borderRadius:
-                                    BorderRadius.circular(10),
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  "Claim Now",
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: "Roboto",
-                                    color: Colors.white,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => PromotionProduct2(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                height: 25,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                  color: const Color.fromARGB(255, 235, 44, 6),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    "Claim Now",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "Roboto",
+                                      color: Colors.white,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -114,4 +118,3 @@ class PromotionGeneral extends StatelessWidget {
     );
   }
 }
-
