@@ -1,73 +1,68 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 import '../home_screen.dart';
+import '../widget/feedback/first_tab.dart';
+import '../widget/feedback/second_tab.dart';
 
-class FeedbackInfo extends StatefulWidget {
-  const FeedbackInfo({Key? key}) : super(key: key);
+class FeedbackInfo extends StatelessWidget {
+  FeedbackInfo({Key? key}) : super(key: key);
+  // TabController _tabController;
 
-  @override
-  State<FeedbackInfo> createState() => _FeedbackInfoState();
-}
-
-class _FeedbackInfoState extends State<FeedbackInfo> {
-  //  final TextEditingController _controller = TextEditingController();
-  // final GlobalKey<FormState> _formKey = GlobalKey();
+  //  @override
+  // void initState() {
+  //   _tabController = TabController(length: 2, vsync: this);
+  //   super.initState();
+  // }
 
   // @override
   // void dispose() {
-  //   _controller.dispose();
   //   super.dispose();
+  //   _tabController.dispose();
   // }
+
+  // enum _Tab { one, two }
+  // _Tab _selectedTab = _Tab.one;
+
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      content: Form(
-        // key: _formKey,
-        child: TextFormField(
-          // controller: _controller,
-          keyboardType: TextInputType.multiline,
-          decoration: const InputDecoration(
-            hintText: 'Enter your feedback here',
-            filled: true,
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.insert_comment)),
+              Tab(icon: Icon(Icons.feedback)),
+            ],
           ),
-          maxLines: 5,
-          maxLength: 4096,
-          textInputAction: TextInputAction.done,
-          validator: (String? text) {
-            if (text == null || text.isEmpty) {
-              return 'Please enter a value';
-            }
-            return null;
-          },
-        ),
-      ),
-      actions: [
-        TextButton(
-          child: const Text('Cancel'),
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomeScreen(),
+          title: Center(
+            child: Text(
+              'Feedback',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
-
-          // onTap: () {
-          //                     Navigator.push(
-          //                         context,
-          //                         MaterialPageRoute(
-          //                             builder: (context) => HomeScreen()));
-          //                   },
         ),
-        // TextButton(
-        // child: const Text('Send'),
-        //   // onPressed: () async {
-        //   //   /**
-        //   //    * Here we will add the necessary code to
-        //   //    * send the entered data to the Firebase Cloud Firestore.
-        //   //    */
-        //   // },
-        // ),
-      ],
+        body: TabBarView(
+          children: [
+            FirstTab(context),
+            // second tab
+            Padding(
+              padding: const EdgeInsets.only(top: 25, left: 15, right: 15),
+              child: SingleChildScrollView(
+                child: SecondTab(context),
+              ),
+            ),
+
+            // Icon(Icons.directions_transit, size: 350),
+          ],
+        ),
+      ),
     );
   }
 }

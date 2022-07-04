@@ -6,7 +6,7 @@ import 'package:membership_system_1/widget/homepage/promotion_slider.dart';
 
 import 'widget/homepage/left_sidebar_drawer.dart';
 import 'widget/homepage/features_widget.dart';
-import 'widget/homepage/highlight_product.dart';
+
 import 'widget/homepage/member_card.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -86,27 +86,7 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Row(
-                  children: [
-                    Text(
-                      "Offers Available for Membership",
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  child: HighlightProduct(),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
+
                 Row(
                   children: [
                     Padding(
