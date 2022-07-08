@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/about_us.dart';
 import '../../auth/sign_in.dart';
@@ -141,13 +142,31 @@ class LeftSideBarDrawer extends StatelessWidget {
                   color: Colors.red,
                 ),
               ),
-              onTap: () {
+              onTap: () async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                await prefs.clear();
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => SignInPage(),
                   ),
                 );
+
+                // if ("token" == null && "token" == "") {
+                //   // Navigator.of(context).pushAndRemoveUntil(
+                //   //     MaterialPageRoute(
+                //   //       builder: (context) => SignInPage(),
+                //   //     ),
+                //   //     (route) => false);
+                //   Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //       builder: (context) => SignInPage(),
+                //     ),
+                //   );
+                // } else {
+                //   print("token is not null");
+                // }
               }
               // onTap: () {
               //   // Update the state of the app

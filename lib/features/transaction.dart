@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:membership_system_1/home_screen.dart';
+import 'package:membership_system_1/widget/transaction/point_claim_history.dart';
 
 import '../../data/rewardsData.dart';
 import '../../models/rewardsModel.dart';
@@ -260,27 +261,27 @@ class Transaction extends StatelessWidget {
               const SizedBox(
                 height: 19,
               ),
-              // Row(
-              //   children: [
-              //     Padding(
-              //       padding: const EdgeInsets.only(
-              //         left: 20,
-              //       ),
-              //     ),
-              //     Text(
-              //       "More Points Rewards",
-              //       style: TextStyle(
-              //         fontSize: 20,
-              //         fontWeight: FontWeight.bold,
-              //         color: Colors.blue,
-              //       ),
-              //     ),
-              //   ],
-              // ),
-              // const SizedBox(
-              //   height: 10,
-              // ),
-              // GainMorePointWidget(rewardsdata: _rewardsdata),
+              Row(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 20,
+                    ),
+                  ),
+                  Text(
+                    "Points Claim History",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const PointClaimHistory(),
             ],
           ),
         ),

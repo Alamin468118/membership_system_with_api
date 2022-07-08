@@ -1,9 +1,13 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:http/http.dart' as http;
 import 'package:membership_system_1/auth/forgot_password.dart';
 import 'package:membership_system_1/home_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'sign_up.dart';
 
@@ -54,8 +58,14 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    checkLogin();
+  }
 
   void login(
     String email,
@@ -63,32 +73,117 @@ class _SignInPageState extends State<SignInPage> {
   ) async {
     // print(email);
     // print(password);
-    try {
-      Response response = await post(
-        Uri.parse('http://membership.tarsoft.my/api/v1/login'),
-        body: {
-          'email': email,
-          'password': password,
-          'device_name': 'Android',
-        },
-      );
 
-      if (response.statusCode == 200) {
-        var data = jsonDecode(response.body.toString());
-        print(data);
-        // print(data['token']); // if use this command will only print token
-        print('successfully created');
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HomeScreen(),
+    const storage = FlutterSecureStorage();
+
+    try {
+      Map<String, String> headers = {
+        "Accept": "application/json",
+      };
+      // Response response = await post(
+      //   Uri.parse('http://membership.tarsoft.my/api/v1/login'),
+      //   body: {
+      //     'email': email,
+      //     'password': password,
+      //     'device_name': 'Android',
+      //   },
+      //   headers: headers,
+      // );
+
+      if (_passwordController.text.isNotEmpty &&
+          _emailController.text.isNotEmpty) {
+        var response = await http.post(
+          Uri.parse('http://membership.tarsoft.my/api/v1/login'),
+          body: {
+            'email': email,
+            'password': password,
+            'device_name': 'Android',
+          },
+          headers: headers,
+        );
+        if (response.statusCode == 200) {
+          var data = jsonDecode(response.headers["token"].toString());
+          final body = json.decode(response.body);
+          print(data);
+
+          print("Login Token" +
+              body["token"]
+                  .toString()); // if use this command will only print token
+          // print('Login Successfull');
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                "Login Successfull",
+              ),
+            ),
+          );
+          // ScaffoldMessenger.of(context).showSnackBar(
+          //   SnackBar(
+          //     content: Text(
+          //       "Token : " + body["token"].toString(),
+          //     ),
+          //   ),
+          // );
+
+          // HERE we store value or token inside shared preference
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          await prefs.setString("login_token", body["token"].toString());
+
+          Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(
+                builder: (context) => HomeScreen(),
+              ),
+              (route) => false);
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => HomeScreen(),
+          //   ),
+          // );
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text(
+                'Invalid email or password',
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
+            ),
+          );
+        }
+      } else {
+        // print('status code: ${response.statusCode}');
+        // print('error');
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Blank value found',
+            ),
           ),
         );
-      } else {
-        print('error');
       }
     } catch (e) {
       print(e.toString());
+    }
+  }
+
+  void checkLogin() async {
+    // to check if user is already logged in or not
+    final storage = FlutterSecureStorage();
+    final token = await storage.read(key: "login_token");
+    if (token != null && token.isNotEmpty) {
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(
+            builder: (context) => HomeScreen(),
+          ),
+          (route) => false);
+      // Navigator.push(
+      //   context,
+      //   MaterialPageRoute(
+      //     builder: (context) => HomeScreen(),
+      //   ),
+      // );
     }
   }
 
@@ -151,16 +246,16 @@ class _SignInPageState extends State<SignInPage> {
                 height: 30.0,
               ),
               GestureDetector(
-                // onTap: () {
-                //   login(
-                //     _emailController.text,
-                //     _passwordController.text,
-                //   );
-                // },
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                  login(
+                    _emailController.text,
+                    _passwordController.text,
+                  );
                 },
+                // onTap: () {
+                //   Navigator.push(context,
+                //       MaterialPageRoute(builder: (context) => HomeScreen()));
+                // },
                 child: Container(
                   height: 50.0,
                   decoration: BoxDecoration(
@@ -220,3 +315,12 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 }
+// _getAndSaveToken() async {
+//   SharedPreferences prefs = await SharedPreferences.getInstance();
+//   String token = await _getTokenFromHttp();
+//   await prefs.setInt('jwt', token);
+// }
+
+// Future<String> _getTokenFromHttp() async {
+//   // http code here
+// }

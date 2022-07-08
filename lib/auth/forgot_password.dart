@@ -71,7 +71,7 @@ class ForgotPassword extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15.0,
               ),
               GestureDetector(

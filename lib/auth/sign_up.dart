@@ -1,6 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'sign_in.dart';
 
@@ -8,12 +12,14 @@ class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _SignUpPageState createState() => _SignUpPageState();
 }
 
 class _SignUpPageState extends State<SignUpPage> {
   Widget _buildTextEmail() {
     return TextFormField(
+      controller: _emailController,
       decoration: InputDecoration(
         hintText: "Email",
         hintStyle: TextStyle(
@@ -26,6 +32,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   Widget _buildTextUser() {
     return TextFormField(
+      controller: _nameController,
       decoration: InputDecoration(
         hintText: "Username",
         hintStyle: TextStyle(
@@ -41,6 +48,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   Widget _buildTextPass() {
     return TextFormField(
+      controller: _passwordController,
       decoration: InputDecoration(
         hintText: "Password",
         hintStyle: const TextStyle(
@@ -85,6 +93,63 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+
+  void register(
+    String email,
+    String username,
+    password,
+  ) async {
+    // print(email);
+    // print(password);
+
+    const storage = FlutterSecureStorage();
+
+    try {
+      Map<String, String> headers = {
+        "Accept": "application/json",
+      };
+      asyncFunc() async {
+        // Async func to handle Futures easier; or use Future.then
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+      }
+
+      Response response = await post(
+        Uri.parse('http://membership.tarsoft.my/api/v1/register'),
+        body: {
+          'name': username,
+          'email': email,
+          'password': password,
+          'device_name': 'Android',
+        },
+        headers: headers,
+      );
+      print(response.body);
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body.toString());
+        await storage.write(key: 'token', value: data.token);
+        var value = await storage.read(key: 'token');
+        print(data);
+        print(data['token']); // if use this command will only print token
+        print('successfully created');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SignInPage(),
+          ),
+        );
+      } else {
+        print('status code: ${response.statusCode}');
+        print('error');
+      }
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,19 +193,33 @@ class _SignUpPageState extends State<SignUpPage> {
               SizedBox(
                 height: 30.0,
               ),
-              Container(
-                height: 50.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(35.0),
-                  color: Colors.blue,
-                ),
-                child: Center(
-                  child: Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
+              GestureDetector(
+                // onTap: () {
+                //   register(
+                //     _emailController.text,
+                //     _passwordController.text,
+                //   );
+                // },
+                onTap: () {
+                  register(
+                      _nameController.text.toString(),
+                      _emailController.text.toString(),
+                      _passwordController.text.toString());
+                },
+                child: Container(
+                  height: 50.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(35.0),
+                    color: Colors.blue,
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Sign Up",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
@@ -178,7 +257,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ],
-                
               ),
             ],
           ),

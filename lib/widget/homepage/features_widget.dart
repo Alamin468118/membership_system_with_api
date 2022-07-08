@@ -23,7 +23,7 @@ class FeaturesWidget extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          crossAxisCount: 3,
+          crossAxisCount: 2,
           children: <Widget>[
             GestureDetector(
               // Transaction
@@ -112,49 +112,49 @@ class FeaturesWidget extends StatelessWidget {
             //     ),
             //   ),
             // ),
-            GestureDetector(
-              // rewards
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Rewards(),
-                  ),
-                );
-              },
-              child: Column(
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height *
-                        0.069, // set height of image Rewards
-                    width: MediaQuery.of(context).size.width * 0.13,
-                    decoration: const BoxDecoration(
-                      color: Colors.transparent,
-                      borderRadius: BorderRadius.zero,
-                      image: DecorationImage(
-                        image: AssetImage(
-                            "assets/images/featured_images/rewards.png"),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 2,
-                  ),
-                  Container(
-                    child: const Text(
-                      "Rewards",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontFamily: "Worksans",
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // GestureDetector(
+            //   // rewards
+            //   onTap: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => Rewards(),
+            //       ),
+            //     );
+            //   },
+            //   child: Column(
+            //     children: [
+            //       Container(
+            //         height: MediaQuery.of(context).size.height *
+            //             0.069, // set height of image Rewards
+            //         width: MediaQuery.of(context).size.width * 0.13,
+            //         decoration: const BoxDecoration(
+            //           color: Colors.transparent,
+            //           borderRadius: BorderRadius.zero,
+            //           image: DecorationImage(
+            //             image: AssetImage(
+            //                 "assets/images/featured_images/rewards.png"),
+            //             fit: BoxFit.fill,
+            //           ),
+            //         ),
+            //       ),
+            //       const SizedBox(
+            //         height: 2,
+            //       ),
+            //       Container(
+            //         child: const Text(
+            //           "Rewards",
+            //           style: TextStyle(
+            //             fontSize: 12,
+            //             fontFamily: "Worksans",
+            //             fontWeight: FontWeight.w600,
+            //             color: Colors.black,
+            //           ),
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             GestureDetector(
               // promotion
               onTap: () {
