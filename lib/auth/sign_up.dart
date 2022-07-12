@@ -93,13 +93,13 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _nameController = TextEditingController();
 
   void register(
-    String email,
     String username,
+    String email,
     password,
   ) async {
     // print(email);
@@ -115,6 +115,9 @@ class _SignUpPageState extends State<SignUpPage> {
         // Async func to handle Futures easier; or use Future.then
         SharedPreferences prefs = await SharedPreferences.getInstance();
       }
+
+      print(password);
+      print(email);
 
       Response response = await post(
         Uri.parse('http://membership.tarsoft.my/api/v1/register'),
@@ -148,7 +151,6 @@ class _SignUpPageState extends State<SignUpPage> {
       print(e.toString());
     }
   }
-  
 
   @override
   Widget build(BuildContext context) {
