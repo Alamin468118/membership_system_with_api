@@ -155,10 +155,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(
                       width: 5,
                     ),
-                    Icon(
-                      Icons.arrow_forward_ios_sharp,
-                      size: 20,
-                      color: Colors.blue.shade300,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const PromotionPage()));
+                      },
+                      child: Icon(
+                        Icons.arrow_forward_ios_sharp,
+                        size: 20,
+                        color: Colors.blue.shade300,
+                      ),
                     ),
                   ],
                 ),
