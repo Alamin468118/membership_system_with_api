@@ -23,7 +23,7 @@ class _SignInPageState extends State<SignInPage> {
     return TextFormField(
       controller: _emailController,
       decoration: const InputDecoration(
-        hintText: "Email or Username",
+        hintText: "Email",
         hintStyle: TextStyle(
           color: Color(0xFFBDC2CB),
           fontSize: 18.0,
@@ -90,8 +90,8 @@ class _SignInPageState extends State<SignInPage> {
       //   headers: headers,
       // );
 
-      if (_passwordController.text.isNotEmpty &&
-          _emailController.text.isNotEmpty) {
+      if (_emailController.text.isNotEmpty &&
+          _passwordController.text.isNotEmpty) {
         var response = await http.post(
           Uri.parse('http://membership.tarsoft.my/api/v1/login'),
           body: {

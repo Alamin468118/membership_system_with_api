@@ -116,8 +116,9 @@ class _SignUpPageState extends State<SignUpPage> {
         SharedPreferences prefs = await SharedPreferences.getInstance();
       }
 
-      print(password);
+      print(username);
       print(email);
+      print(password);
 
       Response response = await post(
         Uri.parse('http://membership.tarsoft.my/api/v1/register'),
@@ -130,6 +131,7 @@ class _SignUpPageState extends State<SignUpPage> {
         headers: headers,
       );
       print(response.body);
+
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
         await storage.write(key: 'token', value: data.token);
@@ -137,6 +139,7 @@ class _SignUpPageState extends State<SignUpPage> {
         print(data);
         print(data['token']); // if use this command will only print token
         print('successfully created');
+
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -207,12 +210,6 @@ class _SignUpPageState extends State<SignUpPage> {
                       _nameController.text.toString(),
                       _emailController.text.toString(),
                       _passwordController.text.toString());
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SignInPage(),
-                    ),
-                  );
                 },
                 child: Container(
                   height: 50.0,
