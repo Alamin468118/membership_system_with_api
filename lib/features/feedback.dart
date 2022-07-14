@@ -31,19 +31,24 @@ class FeedbackInfo extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs: [
               Tab(icon: Icon(Icons.insert_comment)),
               Tab(icon: Icon(Icons.feedback)),
             ],
           ),
-          title: Center(
-            child: Text(
-              'Feedback',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+          title: const Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: EdgeInsets.only(right: 57),
+              child: Text(
+                'Feedback',
+                // textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
