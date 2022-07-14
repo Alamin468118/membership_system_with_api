@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,11 +24,35 @@ class LeftSideBarDrawer extends StatelessWidget {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
+          DrawerHeader(
+            decoration: const BoxDecoration(
+              color: Colors.transparent,
             ),
-            child: Text('Drawer Header'),
+            child: Stack(
+              children: const <Widget>[
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Icon(
+                    Icons.account_circle,
+                    size: 100,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Padding(
+                    padding: EdgeInsets.only(right: 55),
+                    child: Text(
+                      'Profile',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
           ListTile(
               leading: const Icon(Icons.home),
@@ -65,7 +91,7 @@ class LeftSideBarDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Profile(),
+                    builder: (context) => const Profile(),
                   ),
                 );
               }
@@ -117,7 +143,7 @@ class LeftSideBarDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => About(),
+                    builder: (context) => const About(),
                   ),
                 );
               }
@@ -148,7 +174,7 @@ class LeftSideBarDrawer extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SignInPage(),
+                    builder: (context) => const SignInPage(),
                   ),
                 );
 
