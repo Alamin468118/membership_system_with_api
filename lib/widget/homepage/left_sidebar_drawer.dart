@@ -28,30 +28,40 @@ class LeftSideBarDrawer extends StatelessWidget {
             decoration: const BoxDecoration(
               color: Colors.transparent,
             ),
-            child: Stack(
-              children: const <Widget>[
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Icon(
-                    Icons.account_circle,
-                    size: 100,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Profile(),
                   ),
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 55),
-                    child: Text(
-                      'Profile',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                );
+              },
+              child: Stack(
+                children: const <Widget>[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Icon(
+                      Icons.account_circle,
+                      size: 100,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 55),
+                      child: Text(
+                        'Profile',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           ListTile(
@@ -72,36 +82,33 @@ class LeftSideBarDrawer extends StatelessWidget {
                     builder: (context) => HomeScreen(),
                   ),
                 );
-              }
-              //   Navigator.pop(context,);
-              // },
-              ),
-          ListTile(
-              leading: const Icon(Icons.person_pin),
-              title: const Text(
-                'Profile',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontFamily: "Roboto",
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
-                ),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Profile(),
-                  ),
-                );
-              }
-              // onTap: () {
-              //   // Update the state of the app
-              //   // ...
-              //   // Then close the drawer
-              //   Navigator.pop(context);
-              // },
-              ),
+              }),
+          // ListTile(
+          //     leading: const Icon(Icons.person_pin),
+          //     title: const Text(
+          //       'Profile',
+          //       style: TextStyle(
+          //         fontSize: 20,
+          //         fontFamily: "Roboto",
+          //         fontWeight: FontWeight.w400,
+          //         color: Colors.black,
+          //       ),
+          //     ),
+          //     onTap: () {
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //           builder: (context) => const Profile(),
+          //         ),
+          //       );
+          //     }
+          //     // onTap: () {
+          //     //   // Update the state of the app
+          //     //   // ...
+          //     //   // Then close the drawer
+          //     //   Navigator.pop(context);
+          //     // },
+          //     ),
           ListTile(
               leading: const Icon(Icons.feedback_rounded),
               title: const Text(
